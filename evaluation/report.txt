@@ -1,0 +1,78 @@
+Banyumasan NER — Full Evaluation Report  (v3 hybrid pipeline)
+============================================================
+
+=== Per-label metrics (test set) ===
+              precision    recall  f1-score   support
+
+       B-LOC       1.00      0.25      0.40         4
+      B-MISC       0.67      0.48      0.56        29
+       B-ORG       0.00      0.00      0.00         3
+       B-PER       1.00      0.93      0.96        28
+      B-TIME       1.00      0.80      0.89         5
+       I-LOC       0.00      0.00      0.00         0
+      I-MISC       0.50      0.33      0.40         3
+       I-ORG       0.00      0.00      0.00         1
+       I-PER       1.00      1.00      1.00         4
+      I-TIME       0.00      0.00      0.00         1
+
+   micro avg       0.85      0.64      0.73        78
+   macro avg       0.52      0.38      0.42        78
+weighted avg       0.79      0.64      0.70        78
+
+=== Validation set ===
+              precision    recall  f1-score   support
+
+       B-LOC       0.50      0.75      0.60         4
+      B-MISC       0.75      0.55      0.63        22
+       B-ORG       1.00      0.50      0.67         4
+       B-PER       1.00      0.67      0.80        27
+      B-TIME       1.00      1.00      1.00         3
+       I-LOC       0.00      0.00      0.00         1
+      I-MISC       0.00      0.00      0.00         3
+       I-ORG       1.00      0.33      0.50         3
+       I-PER       1.00      0.40      0.57        10
+      I-TIME       0.00      0.00      0.00         0
+
+   micro avg       0.86      0.56      0.68        77
+   macro avg       0.62      0.42      0.48        77
+weighted avg       0.85      0.56      0.66        77
+
+=== v2 → v3 comparison (test set) ===
+  Label                     v2                          v3                 ΔF1
+  ------------------------------------------------------------------------------
+  B-LOC         P=0.000 R=0.000 F=0.000  P=1.000 R=0.250 F=0.400  +0.400
+  B-MISC        P=1.000 R=1.000 F=1.000  P=0.667 R=0.483 F=0.560  -0.440
+  B-ORG         P=1.000 R=0.667 F=0.800  P=0.000 R=0.000 F=0.000  -0.800
+  B-PER         P=0.441 R=0.929 F=0.598  P=1.000 R=0.929 F=0.963  +0.365
+  B-TIME        P=0.000 R=0.000 F=0.000  P=1.000 R=0.800 F=0.889  +0.889
+  I-MISC        P=1.000 R=1.000 F=1.000  P=0.500 R=0.333 F=0.400  -0.600
+  I-ORG         P=1.000 R=1.000 F=1.000  P=0.000 R=0.000 F=0.000  -1.000
+  I-PER         P=0.250 R=0.500 F=0.333  P=1.000 R=1.000 F=1.000  +0.667
+  I-TIME        P=0.000 R=0.000 F=0.000  P=0.000 R=0.000 F=0.000  +0.000
+  micro avg     P=0.618 R=0.808 F=0.700  P=0.847 R=0.641 F=0.730  +0.030
+  macro avg     P=0.521 R=0.566 F=0.526  P=0.517 R=0.379 F=0.421  -0.104
+
+=== LOC gazetteer ===
+alun-alun, banyumas, blumbang, dukuh, désa, gili, gudang, gumebyar, jawa, kakus, kantin, kantor, kelas, kelase, lawang, lawange, malioboro, ndhuwur, negeri, ngumah, njero, penitipan, purwakerta, ruang, sekolah, sekolahan, tengah, tokone, wc
+
+=== Top transitions (v3) ===
+  B-MISC          → I-MISC           +3.419
+  B-PER           → I-PER            +2.669
+  B-LOC           → I-LOC            +1.736
+  O               → O                +1.679
+  B-ORG           → I-ORG            +1.583
+  I-MISC          → B-MISC           +1.496
+  O               → B-PER            +1.416
+  O               → B-MISC           +1.371
+  O               → B-LOC            +1.110
+  O               → B-TIME           +0.889
+  I-PER           → I-PER            +0.827
+  B-TIME          → I-TIME           +0.815
+  O               → B-ORG            +0.711
+  I-ORG           → I-ORG            +0.527
+  I-ORG           → B-ORG            +0.299
+  B-LOC           → O                +0.287
+  B-MISC          → O                +0.144
+  I-MISC          → B-PER            +0.047
+  B-TIME          → O                +0.042
+  I-ORG           → O                +0.037

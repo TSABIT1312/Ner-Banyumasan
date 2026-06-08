@@ -1,0 +1,27 @@
+{
+  "labels": [
+    "B-LOC",
+    "B-MISC",
+    "B-ORG",
+    "B-PER",
+    "B-TIME",
+    "I-LOC",
+    "I-MISC",
+    "I-ORG",
+    "I-PER",
+    "I-TIME",
+    "O"
+  ],
+  "entity_labels": [
+    "B-LOC",
+    "B-MISC",
+    "B-ORG",
+    "B-PER",
+    "B-TIME",
+    "I-LOC",
+    "I-MISC",
+    "I-ORG",
+    "I-PER",
+    "I-TIME"
+  ]
+}
