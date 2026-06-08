@@ -9,7 +9,8 @@ build/
 .env
 .venv
 venv/
-*.joblib
 data/raw/
 data/processed/
 models/token_freq.json
+models/crf_ner_v1.joblib
+models/crf_ner_v2.joblib
